@@ -12,10 +12,10 @@ var exampleHtml = `
 <body>
   <h1>Hello!</h1>
   <a href="/other-page">
-    A link to another page
-    <span> some span  </span>
+    My name is Himanshu Joshi
+    <span> I am a Golang Developer  </span>
   </a>
-  <a href="/page-two">A link to a second page</a>
+  <a href="/page-two">This is a Html Link Parser</a>
 </body>
 </html>
 `
