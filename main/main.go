@@ -1,28 +1,30 @@
 package main
 
 import (
-	"HTML_Link_parser/parse"
-	"flag"
 	"fmt"
-	"os"
+	"strings"
+
+	"github.com/gophercises/link"
 )
 
+var exampleHtml = `
+<html>
+<body>
+  <h1>Hello!</h1>
+  <a href="/other-page">
+    A link to another page
+    <span> some span  </span>
+  </a>
+  <a href="/page-two">A link to a second page</a>
+</body>
+</html>
+`
+
 func main() {
-	filename := flag.String("file", "message.html", "The parsing of HTML file ")
-	flag.Parse()
-	s, err := os.Open(*filename)
+	r := strings.NewReader(exampleHtml)
+	links, err := link.Parse(r)
 	if err != nil {
 		panic(err)
 	}
-
-	links, err := link.Parse(s)
-	if err != nil {
-		panic(err)
-	}
-
-	for _, i := range links {
-		fmt.Println("Href: ", i.Href)
-		fmt.Println("Text: ", i.Text)
-	}
-	return
+	fmt.Printf("%+v\n", links)
 }
