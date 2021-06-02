@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/gophercises/link"
+	"github.com/himanshu07070/HTML_Link_Parser/link"
 )
 
 var exampleHtml = `
